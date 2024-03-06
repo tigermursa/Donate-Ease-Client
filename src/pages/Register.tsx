@@ -31,7 +31,7 @@ const Register: React.FC = () => {
       const result = await response.json();
 
       if (response.ok) {
-        // Display SweetAlert2 alert
+        // Display SweetAlert2 success alert
         Swal.fire({
           icon: "success",
           title: "Registration Successful",
@@ -42,13 +42,25 @@ const Register: React.FC = () => {
         reset();
 
         // Redirect to login page
-        navigate('/login');
+        navigate("/login");
       } else {
-        // Handle registration error
-        console.error(result.message);
+        // Display SweetAlert2 error alert with proper error message
+        Swal.fire({
+          icon: "error",
+          title: "Registration Error",
+          text: result.error || "An error occurred during registration",
+        });
       }
     } catch (error) {
-      console.error("Error during registration:", error);
+      // Handle network errors separately
+      console.error("Network error during registration:", error);
+
+      // Display SweetAlert2 error alert for network errors
+      Swal.fire({
+        icon: "error",
+        title: "Network Error",
+        text: "Failed to connect to the server. Please try again later.",
+      });
     }
   };
 

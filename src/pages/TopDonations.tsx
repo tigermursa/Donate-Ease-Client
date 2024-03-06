@@ -7,8 +7,17 @@ const TopDonations = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 1,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -31,10 +40,10 @@ const TopDonations = () => {
             {/* Card 1 */}
             <div
               key={1}
-              className="relative mb-4 flex grid-cols-1 flex-col place-items-center justify-between gap-6 rounded-2xl border border-solid border-[#636262] bg-white px-8 pb-8 pt-16 max-[767px]:mt-4 md:mb-8 md:px-6 md:pb-8 md:pt-16 lg:mb-4 mt-10"
+              className="relative mb-4 flex flex-col items-center justify-between gap-6 rounded-2xl border border-solid border-[#636262] bg-white px-8 pb-8 pt-16 max-[767px]:mt-4 md:mb-8 md:px-6 md:pb-8 md:pt-16 lg:mb-4 mt-10"
             >
               <div className="mb-4 flex flex-col items-center">
-                <h6 className="text-base font-semibold">John Doe</h6>
+                <h6 className="text-gray-500 font-semibold">John Doe</h6>
                 <p className="text-sm text-[#636262]">Designer</p>
               </div>
               <p className="mb-4 text-[#636262]">
@@ -43,7 +52,7 @@ const TopDonations = () => {
                 venenatis"
               </p>
               <div className="flex">{/* Add your rating icons here */}</div>
-              <div className="absolute bottom-[auto] left-[auto] right-[50%] top-[-32px] flex h-16 w-16 translate-x-1/2 flex-col items-center justify-center rounded-full border border-solid border-[#9b9b9b] bg-white shadow-md">
+              <div className="absolute bottom-[auto] left-[auto] right-[50%] top-[-32px] flex h-16 w-16 translate-x-1/2 flex-col items-center justify-center rounded-full border border-solid border-[#9b9b9b] bg-white shadow-md mt-4 md:mt-0">
                 <img
                   src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63905435069fb009d43abbb1_Ellipse-2.jpg"
                   alt=""
@@ -51,14 +60,13 @@ const TopDonations = () => {
                 />
               </div>
             </div>
-
-            {/* Card 2 */}
+            {/* Card 1 */}
             <div
-              key={2}
-              className="relative mb-4 flex grid-cols-1 flex-col place-items-center justify-between gap-6 rounded-2xl border border-solid border-[#636262] bg-white px-8 pb-8 pt-16 max-[767px]:mt-4 md:mb-8 md:px-6 md:pb-8 md:pt-16 lg:mb-4 mt-10"
+              key={1}
+              className="relative mb-4 flex flex-col items-center justify-between gap-6 rounded-2xl border border-solid border-[#636262] bg-white px-8 pb-8 pt-16 max-[767px]:mt-4 md:mb-8 md:px-6 md:pb-8 md:pt-16 lg:mb-4 mt-10"
             >
               <div className="mb-4 flex flex-col items-center">
-                <h6 className="text-base font-semibold">John Doe</h6>
+                <h6 className="text-gray-500 font-semibold">John Doe</h6>
                 <p className="text-sm text-[#636262]">Designer</p>
               </div>
               <p className="mb-4 text-[#636262]">
@@ -67,22 +75,21 @@ const TopDonations = () => {
                 venenatis"
               </p>
               <div className="flex">{/* Add your rating icons here */}</div>
-              <div className="absolute bottom-[auto] left-[auto] right-[50%] top-[-32px] flex h-16 w-16 translate-x-1/2 flex-col items-center justify-center rounded-full border border-solid border-[#9b9b9b] bg-white shadow-md">
+              <div className="absolute bottom-[auto] left-[auto] right-[50%] top-[-32px] flex h-16 w-16 translate-x-1/2 flex-col items-center justify-center rounded-full border border-solid border-[#9b9b9b] bg-white shadow-md mt-4 md:mt-0">
                 <img
-                  src="https://assets.website-files.com/63904f663019b0d8edf8d57c/6390543797156ee437ef0425_Ellipse-1.jpg"
+                  src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63905435069fb009d43abbb1_Ellipse-2.jpg"
                   alt=""
                   className="inline-block h-full w-full rounded-full"
                 />
               </div>
             </div>
-
-            {/* Card 3 */}
+            {/* Card 1 */}
             <div
-              key={2}
-              className="relative mb-4 flex grid-cols-1 flex-col place-items-center justify-between gap-6 rounded-2xl border border-solid border-[#636262] bg-white px-8 pb-8 pt-16 max-[767px]:mt-4 md:mb-8 md:px-6 md:pb-8 md:pt-16 lg:mb-4 mt-10"
+              key={1}
+              className="relative mb-4 flex flex-col items-center justify-between gap-6 rounded-2xl border border-solid border-[#636262] bg-white px-8 pb-8 pt-16 max-[767px]:mt-4 md:mb-8 md:px-6 md:pb-8 md:pt-16 lg:mb-4 mt-10"
             >
               <div className="mb-4 flex flex-col items-center">
-                <h6 className="text-base font-semibold">John Doe</h6>
+                <h6 className="text-gray-500 font-semibold">John Doe</h6>
                 <p className="text-sm text-[#636262]">Designer</p>
               </div>
               <p className="mb-4 text-[#636262]">
@@ -91,14 +98,15 @@ const TopDonations = () => {
                 venenatis"
               </p>
               <div className="flex">{/* Add your rating icons here */}</div>
-              <div className="absolute bottom-[auto] left-[auto] right-[50%] top-[-32px] flex h-16 w-16 translate-x-1/2 flex-col items-center justify-center rounded-full border border-solid border-[#9b9b9b] bg-white shadow-md">
+              <div className="absolute bottom-[auto] left-[auto] right-[50%] top-[-32px] flex h-16 w-16 translate-x-1/2 flex-col items-center justify-center rounded-full border border-solid border-[#9b9b9b] bg-white shadow-md mt-4 md:mt-0">
                 <img
-                  src="https://assets.website-files.com/63904f663019b0d8edf8d57c/6390543797156ee437ef0425_Ellipse-1.jpg"
+                  src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63905435069fb009d43abbb1_Ellipse-2.jpg"
                   alt=""
                   className="inline-block h-full w-full rounded-full"
                 />
               </div>
             </div>
+            {/* Add more cards as needed */}
           </Slider>
         </div>
 
