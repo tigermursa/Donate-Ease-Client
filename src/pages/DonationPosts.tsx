@@ -45,7 +45,7 @@ const DonationPosts = () => {
   };
 
   return (
-    <div className="mx-auto flex flex-col" id="all-donations">
+    <div className="mx-auto flex flex-col" id="donation">
       <h1 className="mt-10 mb-10 text-center text-xl md:text-3xl lg:text-5xl font-semibold">
         Donations
       </h1>
