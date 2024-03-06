@@ -1,0 +1,58 @@
+[
+    {
+        "image": "https://socinator.com/blog/wp-content/uploads/2022/03/Social-Media-Marketing-Ideas-For-Non-Profit-Organizations1.png",
+        "category": "Technology",
+        "title": "Innovative Tech Expo",
+        "amount": 1200,
+        "description": "Explore the latest technological advancements at the Innovation & Tech Expo."
+    },
+    {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqcqAmy9ZohinQFTsmoVPBmMyxf79oRJrnew&usqp=CAU",
+        "category": "Food",
+        "title": "Gourmet Cooking Class",
+        "amount": 800,
+        "description": "Join our gourmet cooking class and learn to prepare delicious meals from top chefs."
+    },
+    {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhSeODUSnfvc_5npLr0rXliST8OtBWn8Xs2R1xvkbpVgk_AbKl2O-r30BULBE7wmQn_jc&usqp=CAU",
+        "category": "Education",
+        "title": "STEM Workshop for Kids",
+        "amount": 500,
+        "description": "Engage your children in a fun and educational STEM workshop designed for young minds."
+    },
+    {
+        "image": "https://png.pngtree.com/png-clipart/20220509/original/pngtree-charity-foundation-poster-for-social-volunteering-help-and-donation-action-png-image_7676011.png",
+        "category": "Travel",
+        "title": "Adventure in the Alps",
+        "amount": 2500,
+        "description": "Embark on an unforgettable adventure exploring the breathtaking landscapes of the Alps."
+    },
+    {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRknCv6x2LHUPKKHQY3Yjhl1XhXvO83xdwYBw&usqp=CAU",
+        "category": "Arts",
+        "title": "Abstract Art Exhibition",
+        "amount": 700,
+        "description": "Immerse yourself in the world of abstract art at our exclusive art exhibition."
+    },
+    {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH6FlqcSEbv7p2bd858tc0412LCv1vJ0hfNA&usqp=CAU",
+        "category": "Fitness",
+        "title": "Yoga Retreat",
+        "amount": 1200,
+        "description": "Rejuvenate your mind and body at a peaceful yoga retreat in the countryside."
+    },
+    {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5AqvZok-k70mezQm-oZ1n8R2oeIHUpxhmJwB1HzjlfP-mTdtSqpJAWG7sZ1ipnDJ2S_0&usqp=CAU",
+        "category": "Environment",
+        "title": "Green Living Symposium",
+        "amount": 900,
+        "description": "Join experts in the Green Living Symposium to explore sustainable practices for a better future."
+    },
+    {
+        "image": "https://images.donatekart.com/campaign/Sweater20112020_Cover.jpg",
+        "category": "Music",
+        "title": "Jazz Night Under the Stars",
+        "amount": 600,
+        "description": "Experience a magical night of jazz music under the stars at our open-air concert."
+    }
+]
