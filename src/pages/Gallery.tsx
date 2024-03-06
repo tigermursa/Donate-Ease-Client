@@ -75,7 +75,7 @@ const GalleryComponent = () => {
           </p>
         </div>
       </div>
-      <PhotoAlbum layout="columns" photos={photos} columns={4} padding={8} />;
+      <PhotoAlbum  layout="columns" photos={photos} columns={4} padding={8}   />;
     </div>
   );
 };
