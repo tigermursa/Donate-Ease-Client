@@ -16,7 +16,7 @@ const FAQ = () => {
         <div className="justify-center mx-auto flex w-full max-w-7xl flex-col items-center px-5 py-16 md:px-10 md:py-24 lg:py-32">
           {/* TEXT DIV */}
           <div className="mx-auto flex max-w-[550px] flex-col items-center justify-center px-6 text-center lg:max-w-[800px] lg:px-10">
-            <h1 className="mx-auto text-center font-bold text-black lg:text-3xl lg:text-4xl">
+            <h1 className="mx-auto text-center font-bold text md:text-3xl lg:text-4xl">
               Frequently Asked Questions
             </h1>
             <p className="font-inter mt-4 max-w-[600px] px-5 text-center text-base font-light text-[#71717A] lg:max-w-[500px] lg:">
@@ -31,7 +31,7 @@ const FAQ = () => {
               <div key={index}>
                 <div className="relative my-3 w-full rounded-md px-12 py-8">
                   <div className="max-w-[700px]">
-                    <h2 className="font-bold text-black text-xl">
+                    <h2 className="font-bold text text-xl">
                       {index === 0 && "How we started our first journey?"}
                       {index === 1 && "How can I donate money here?"}
                       {index === 2 && "How can I be a member"}

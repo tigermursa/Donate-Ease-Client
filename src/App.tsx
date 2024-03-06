@@ -1,9 +1,12 @@
+import { DarkModeProvider } from "./Theme/DarkModeContext";
 import MainLayout from "./components/layouts/MainLayout";
 
 const App = () => {
   return (
-    <div className="container mx-auto">
-      <MainLayout />
+    <div>
+      <DarkModeProvider>
+        <MainLayout />
+      </DarkModeProvider>
     </div>
   );
 };

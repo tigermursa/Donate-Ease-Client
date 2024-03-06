@@ -49,7 +49,7 @@ const Banner = () => {
 
   return (
     <motion.div
-      className="flex flex-col justify-center items-center mt-24 mb-10"
+      className="flex flex-col justify-center items-center pt-24 mb-10"
       id="home"
     >
       {/* text */}
