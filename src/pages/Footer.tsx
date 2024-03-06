@@ -1,3 +1,6 @@
+import { FaArrowUp } from "react-icons/fa6";
+import { Link } from "react-scroll";
+
 const Footer = () => {
   return (
     <div id="footer">
@@ -137,6 +140,14 @@ const Footer = () => {
                   className="mr-3 inline-block"
                 />
                 <p className="font-inter ml-4">support@devjoy.xyz</p>
+              </div>
+              <div className=" flex justify-end items-end h-[100px]">
+                <Link to="home" smooth={true} duration={2000}>
+                  {" "}
+                  <button className="bg-blue-800 text-white bg-opacity-80 hover:bg-opacity-100 w-12 h-12 flex justify-center items-center relative rounded-full ">
+                    <FaArrowUp className="text-2xl font-extrabold" />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
