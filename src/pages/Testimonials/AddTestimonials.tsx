@@ -43,7 +43,8 @@ const AddTestimonials = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex flex-col justify-center items-center h-screen">
+      <h1 className="text-2xl mb-10 font-semibold">ADD Testimonial</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="w-96 p-8 bg-white rounded"
