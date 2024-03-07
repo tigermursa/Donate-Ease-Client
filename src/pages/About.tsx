@@ -1,4 +1,9 @@
+import { useGetVolunteerDataQuery } from "@/redux/api/api";
+import { Key } from "react";
+
 const About = () => {
+  const { data } = useGetVolunteerDataQuery("");
+  const volunteerData = data?.data || [];
   return (
     <div id="about">
       <section>
@@ -34,8 +39,50 @@ const About = () => {
                 pellentesque dignissim enim sit amet venenatis.
               </p>
             </div>
+            <div className="flex flex-col gap-5 rounded-2xl border border-solid border-black p-10 sm:p-20">
+              <h2 className="text-3xl font-bold md:text-4xl">
+                Digital Volunteers
+              </h2>
+              <table className="min-w-full bg-white border border-gray-300">
+                <thead>
+                  <tr>
+                    <th className="py-2 px-4 border-b text-left align-middle">
+                      Name
+                    </th>
+                    <th className="py-2 px-4 border-b text-left align-middle">
+                      Email
+                    </th>
+                    <th className="py-2 px-4 border-b text-left align-middle">
+                      Age
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {volunteerData.map(
+                    (volunteer: {
+                      _id: Key | null | undefined;
+                      name: string;
+                      email: string;
+                      age: string;
+                    }) => (
+                      <tr key={volunteer._id}>
+                        <td className="py-2 px-4 border-b">{volunteer.name}</td>
+                        <td className="py-2 px-4 border-b">
+                          {volunteer.email}
+                        </td>
+                        <td className="py-2 px-4 border-b">{volunteer.age}</td>
+                      </tr>
+                    )
+                  )}
+                </tbody>
+              </table>
+            </div>
+            <img
+              src="https://www.verywellfamily.com/thmb/UbunHMxsiCkTP0fascQ__UALBAg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1306629971-ac046b93a1f74306b65b079aed470cf6.jpg"
+              alt=""
+              className="inline-block h-full w-full rounded-2xl object-cover"
+            />
           </div>
-          
         </div>
       </section>
     </div>
