@@ -7,7 +7,6 @@
   padding: 0;
   margin: 0;
   font-family: "Rubik", sans-serif;
-  
 }
 
 .btn-primary {
@@ -33,5 +32,5 @@
   justify-content: center;
   align-items: center;
   font-weight: 600;
-  color: #4299e1; 
+  color: #4299e1;
 }

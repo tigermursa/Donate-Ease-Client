@@ -1,5 +1,6 @@
 import { useGetDonationDataQuery } from "@/redux/api/api";
 import React, { useState } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 
 const DonationPosts = () => {
@@ -129,17 +130,14 @@ const DonationPosts = () => {
         <div className="flex justify-center">
           {visiblePosts > initialVisiblePosts ? (
             <button
-              className="bg-black p-2 text-white rounded-3xl mt-5 mb-3 hover:text-gray-300"
+              className=" text-gray-600 bg-gray-400 p-2 rounded-3xl mt-5 mb-3 hover:text-gray-300"
               onClick={handleSeeLess}
             >
-              See Less
+              <FaChevronUp />
             </button>
           ) : (
-            <button
-              className="bg-black p-2 text-white rounded-3xl mt-5 mb-3 hover:text-gray-300"
-              onClick={handleShowMore}
-            >
-              Show More
+            <button className="text-gray-600 bg-gray-400 p-2 rounded-3xl mt-5 mb-3 hover:text-gray-300 " onClick={handleShowMore}>
+              <FaChevronDown />
             </button>
           )}
         </div>

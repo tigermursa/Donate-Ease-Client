@@ -5,7 +5,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const baseApi = createApi({
     reducerPath: "baseApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000" }), //the main url link
+    baseQuery: fetchBaseQuery({ baseUrl: "https://donate-simple-server.vercel.app" }), //the main url link
     tagTypes: ['todo'],
     endpoints: (builder) => ({
         //getting  data from database
