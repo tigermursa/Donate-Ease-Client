@@ -10,10 +10,8 @@ import PrivateRoute from "@/components/layouts/PrivateRoute";
 import DonationTable from "@/pages/Dashboard/DonationTable";
 import AddTestimonials from "@/pages/Testimonials/AddTestimonials";
 import Chart from "@/pages/Chart";
-import Leader from "../../src/pages/Leaderboard/Leaderboard";
 import Leaderboards from "@/pages/Leaderboard/Leaderboards";
-
-
+import VolunteerForm from "@/pages/Volunteer/VolunteerFrom";
 
 const router = createBrowserRouter([
   {
@@ -60,7 +58,11 @@ const router = createBrowserRouter([
       },
       {
         path: "leaderboard",
-        element: <Leaderboards/>,
+        element: <Leaderboards />,
+      },
+      {
+        path: "volunteer",
+        element: <VolunteerForm />,
       },
     ],
   },

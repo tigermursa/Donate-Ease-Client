@@ -19,15 +19,20 @@ const items: MenuProps["items"] = [
     key: "002",
     label: <NavLink to={"/dashboard/chart"}>Pie Chart</NavLink>,
   },
-  {
-    key: "003",
-    label: <NavLink to={"/"}>Home</NavLink>,
-  },
+
   {
     key: "004",
     label: (
       <NavLink to={"/dashboard/create-testimonial"}>Add Testimonial</NavLink>
     ),
+  },
+  {
+    key: "006",
+    label: <NavLink to={"/dashboard/volunteer"}>Volunteer Form</NavLink>,
+  },
+  {
+    key: "003",
+    label: <NavLink to={"/"}>Home</NavLink>,
   },
 ];
 
