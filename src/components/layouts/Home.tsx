@@ -1,4 +1,4 @@
-
+import GratitudeWall from "@/pages/GratitudeWall/GratitudeWall";
 import About from "../../pages/About";
 import Banner from "../../pages/Banner";
 import DonationPosts from "../../pages/DonationPosts";
@@ -14,6 +14,7 @@ const Home = () => {
       <DonationPosts />
       <TopDonations />
       <Gallery />
+      <GratitudeWall />
       <Fact />
       <FAQ />
       <About />

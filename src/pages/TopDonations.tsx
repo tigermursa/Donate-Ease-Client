@@ -21,7 +21,7 @@ const TopDonations = () => {
     ],
   };
   const { data } = useGetTestimonialDataQuery("");
-  console.log(data);
+ 
   
 
   return (

@@ -50,7 +50,7 @@ const Leaderboards = () => {
     },
     {
       id: "00914H",
-      name: "Ryan Anderson",
+      name: "Jhonker Mahbub",
       donationAmount: "11000",
       cityCode: "MIA",
     },

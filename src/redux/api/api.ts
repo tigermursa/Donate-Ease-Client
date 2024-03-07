@@ -23,6 +23,13 @@ export const baseApi = createApi({
             }),
             providesTags: ['todo']
         }),
+        getWallData: builder.query({
+            query: () => ({
+                url: `/api/v3/get`,
+                method: "GET",
+            }),
+            providesTags: ['todo']
+        }),
 
         //posting task / Create
         addDonationData: builder.mutation({
@@ -37,6 +44,15 @@ export const baseApi = createApi({
         addTestimonial: builder.mutation({
             query: (data) => ({
                 url: "/api/v2/create",
+                method: "POST",
+                body: data,
+            }),
+            invalidatesTags: ['todo']  //for make fetch after the action
+        }),
+        //posting wall / Create
+        addWall: builder.mutation({
+            query: (data) => ({
+                url: "/api/v3/create",
                 method: "POST",
                 body: data,
             }),
@@ -64,4 +80,4 @@ export const baseApi = createApi({
 });
 
 //CRUD api hooks
-export const { useGetDonationDataQuery, useAddDonationDataMutation, useUpdateDataMutation, useDeleteDataMutation, useAddTestimonialMutation, useGetTestimonialDataQuery } = baseApi;
+export const { useGetDonationDataQuery, useAddDonationDataMutation, useUpdateDataMutation, useDeleteDataMutation, useAddTestimonialMutation, useGetTestimonialDataQuery, useGetWallDataQuery, useAddWallMutation } = baseApi;
