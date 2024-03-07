@@ -6,10 +6,14 @@ import DashboardLayout from "@/components/layouts/DashboardLayout";
 import DonationsDetails from "@/pages/DonationsDetails";
 import Login from "@/pages/Login";
 import Register from "@/pages/Register";
-import PieChart from "@/pages/PieChart";
 import PrivateRoute from "@/components/layouts/PrivateRoute";
 import DonationTable from "@/pages/Dashboard/DonationTable";
 import AddTestimonials from "@/pages/Testimonials/AddTestimonials";
+import Chart from "@/pages/Chart";
+import Leader from "../../src/pages/Leaderboard/Leaderboard";
+import Leaderboards from "@/pages/Leaderboard/Leaderboards";
+
+
 
 const router = createBrowserRouter([
   {
@@ -40,7 +44,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <PieChart />,
+        element: <DonationTable />,
       },
       {
         path: "all-donations",
@@ -48,11 +52,15 @@ const router = createBrowserRouter([
       },
       {
         path: "chart",
-        element: <PieChart />,
+        element: <Chart />,
       },
       {
         path: "create-testimonial",
         element: <AddTestimonials />,
+      },
+      {
+        path: "leaderboard",
+        element: <Leaderboards/>,
       },
     ],
   },

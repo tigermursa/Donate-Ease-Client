@@ -12,6 +12,10 @@ const items: MenuProps["items"] = [
     label: <NavLink to={"/dashboard/all-donations"}>All Donations</NavLink>,
   },
   {
+    key: "005",
+    label: <NavLink to={"/dashboard/leaderboard"}>Leader Board</NavLink>,
+  },
+  {
     key: "002",
     label: <NavLink to={"/dashboard/chart"}>Pie Chart</NavLink>,
   },
@@ -21,7 +25,9 @@ const items: MenuProps["items"] = [
   },
   {
     key: "004",
-    label: <NavLink to={"/dashboard/create-testimonial"}>Add Testimonial</NavLink>,
+    label: (
+      <NavLink to={"/dashboard/create-testimonial"}>Add Testimonial</NavLink>
+    ),
   },
 ];
 

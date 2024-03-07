@@ -22,22 +22,7 @@ const TopDonations = () => {
   };
   const { data } = useGetTestimonialDataQuery("");
   console.log(data);
-  const data2 = [
-    {
-      img: "https://assets.website-files.com/63904f663019b0d8edf8d57c/63905435069fb009d43abbb1_Ellipse-2.jpg",
-      name: "Mursalin Hossain",
-      profession: "Web Developer",
-      comment:
-        "I truly believe that helping others is another way to helping myself, I feel so inner peace inside my heart by donating",
-    },
-    {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUjIBODT86UZLa3z-Yiw2_ZIDog3HDWOUIfg&usqp=CAU",
-      name: "Finona jesuja",
-      profession: "CEO Ant ",
-      comment:
-        "I truly believe that helping others is another way to helping myself, I feel so inner peace inside my heart by donating",
-    },
-  ];
+  
 
   return (
     <div className="mx-auto">
