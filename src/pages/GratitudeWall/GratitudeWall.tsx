@@ -66,7 +66,7 @@ const GratitudeWall: React.FC = () => {
   return (
     <div className="">
       <div className=" mx-auto mt-10 p-6  rounded-md  flex flex-col justify-center items-center">
-        <h1 className="text-4xl font-semibold mb-20 mt-10">
+        <h1 className="text-3xl font-semibold md:text-5xl">
           Community Gratitude Wall
         </h1>
 
