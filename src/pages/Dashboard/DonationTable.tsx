@@ -7,6 +7,7 @@ import {
 import AddDonationPost from "./AddDonationPost";
 import Swal from "sweetalert2";
 import UpdateDonationPost from "./UpdateDonationPost";
+import { FaCircleNotch } from "react-icons/fa6";
 
 Modal.setAppElement("#root"); // Set the root element for accessibility
 
@@ -25,7 +26,7 @@ const DonationTable: React.FC = () => {
     null
   );
   // Fetch donation data from the server
-  const { data } = useGetDonationDataQuery("");
+  const { data ,isFetching,isLoading } = useGetDonationDataQuery("");
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -64,6 +65,23 @@ const DonationTable: React.FC = () => {
       }
     });
   };
+
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center h-screen items-center  ">
+        <h1 className="flex items-center gap-2 text-xl text-blue-700 font-semibold">
+          Loading <FaCircleNotch className="animate-spin" />{" "}
+        </h1>
+      </div>
+    );
+  } else if (isFetching) {
+    <div className="flex justify-center  h-screen items-center ">
+      <h1 className="flex items-center gap-2 text-xl text-blue-700 font-semibold">
+        Fetching <FaCircleNotch className="animate-spin" />{" "}
+      </h1>
+    </div>;
+  }
 
   return (
     <div className="container mx-auto mt-8">

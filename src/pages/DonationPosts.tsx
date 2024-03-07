@@ -1,35 +1,15 @@
 import { useGetDonationDataQuery } from "@/redux/api/api";
 import React, { useState } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
+import { FaChevronDown, FaChevronUp, FaCircleNotch } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 
 const DonationPosts = () => {
   const initialVisiblePosts = 6;
   const [visiblePosts, setVisiblePosts] = useState(initialVisiblePosts);
-  // const donations = [
-  //   {
-  //     id: 1,
-  //     imageUrl:
-  //       "https://t4.ftcdn.net/jpg/02/14/74/61/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg",
-  //     title: "More money has been donated",
-  //     category: "Food",
-  //     amount: 5000,
-  //   },
-  //   {
-  //     id: 2,
-  //     imageUrl:
-  //       "https://t4.ftcdn.net/jpg/02/14/74/61/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg",
-  //     title: "More money has been donated",
-  //     category: "Food",
-  //     amount: 5000,
-  //   },
-
-  //   // Add more donations as needed
-  // ];
 
   //from server
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { data, isLoading } = useGetDonationDataQuery(" ");
+  const { data, isLoading, isFetching } = useGetDonationDataQuery(" ");
 
   //console.log(data);
 
@@ -44,6 +24,22 @@ const DonationPosts = () => {
   const handleSeeLess = () => {
     setVisiblePosts(initialVisiblePosts);
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center  ">
+        <h1 className="flex items-center gap-2 text-xl text-blue-700 font-semibold">
+          Loading <FaCircleNotch className="animate-spin" />{" "}
+        </h1>
+      </div>
+    );
+  } else if (isFetching) {
+    <div className="flex justify-center  ">
+      <h1 className="flex items-center gap-2 text-xl text-blue-700 font-semibold">
+        Fetching <FaCircleNotch className="animate-spin" />{" "}
+      </h1>
+    </div>;
+  }
 
   return (
     <div className="mx-auto flex flex-col" id="donation">
@@ -136,7 +132,10 @@ const DonationPosts = () => {
               <FaChevronUp />
             </button>
           ) : (
-            <button className="text-gray-600 bg-gray-400 p-2 rounded-3xl mt-5 mb-3 hover:text-gray-300 " onClick={handleShowMore}>
+            <button
+              className="text-gray-600 bg-gray-400 p-2 rounded-3xl mt-5 mb-3 hover:text-gray-300 "
+              onClick={handleShowMore}
+            >
               <FaChevronDown />
             </button>
           )}

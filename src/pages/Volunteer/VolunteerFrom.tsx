@@ -2,6 +2,7 @@ import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useAddVolunteerMutation } from "@/redux/api/api";
 import Swal from "sweetalert2";
+import { FaCircleNotch } from "react-icons/fa6";
 
 // Define the types for your form data
 interface FormData {
@@ -50,6 +51,16 @@ const VolunteerForm: React.FC = () => {
       });
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center h-screen items-center  ">
+        <h1 className="flex items-center gap-2 text-xl text-blue-700 font-semibold">
+          Loading <FaCircleNotch className="animate-spin" />{" "}
+        </h1>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-md  ">

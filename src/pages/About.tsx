@@ -1,9 +1,25 @@
 import { useGetVolunteerDataQuery } from "@/redux/api/api";
 import { Key } from "react";
+import { FaCircleNotch } from "react-icons/fa6";
 
 const About = () => {
-  const { data } = useGetVolunteerDataQuery("");
+  const { data, isFetching, isLoading } = useGetVolunteerDataQuery("");
   const volunteerData = data?.data || [];
+  if (isLoading) {
+    return (
+      <div className="flex justify-center  ">
+        <h1 className="flex items-center gap-2 text-xl text-blue-700 font-semibold">
+          Loading <FaCircleNotch className="animate-spin" />{" "}
+        </h1>
+      </div>
+    );
+  } else if (isFetching) {
+    <div className="flex justify-center  ">
+      <h1 className="flex items-center gap-2 text-xl text-blue-700 font-semibold">
+        Fetching <FaCircleNotch className="animate-spin" />{" "}
+      </h1>
+    </div>;
+  }
   return (
     <div id="about">
       <section>

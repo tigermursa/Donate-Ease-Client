@@ -1,5 +1,6 @@
 import { useAddTestimonialMutation } from "@/redux/api/api";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { FaCircleNotch } from "react-icons/fa6";
 import Swal from "sweetalert2";
 
 interface FormData {
@@ -42,6 +43,16 @@ const AddTestimonials = () => {
       });
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center h-screen items-center  ">
+        <h1 className="flex items-center gap-2 text-xl text-blue-700 font-semibold">
+          Loading <FaCircleNotch className="animate-spin" />{" "}
+        </h1>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">

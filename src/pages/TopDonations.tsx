@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useGetTestimonialDataQuery } from "@/redux/api/api";
+import { FaCircleNotch } from "react-icons/fa6";
 
 const TopDonations = () => {
   const settings = {
@@ -22,7 +23,7 @@ const TopDonations = () => {
       },
     ],
   };
-  const { data } = useGetTestimonialDataQuery("");
+  const { data, isLoading, isFetching } = useGetTestimonialDataQuery("");
 
   const truncateComment = (comment: string, limit: number) => {
     if (comment.length <= limit) {
@@ -30,6 +31,23 @@ const TopDonations = () => {
     }
     return comment.substring(0, limit).trim() + " ...";
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center  ">
+        <h1 className="flex items-center gap-2 text-xl text-blue-700 font-semibold">
+          Loading <FaCircleNotch className="animate-spin" />{" "}
+        </h1>
+      </div>
+    );
+  } else if (isFetching) {
+    <div className="flex justify-center  ">
+      <h1 className="flex items-center gap-2 text-xl text-blue-700 font-semibold">
+        Fetching <FaCircleNotch className="animate-spin" />{" "}
+      </h1>
+    </div>;
+  }
+
   return (
     <div className="mx-auto">
       <section className="relative">

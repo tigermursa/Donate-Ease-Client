@@ -9,15 +9,16 @@ import {
   ReactPortal,
   Key,
 } from "react";
+import { FaCircleNotch } from "react-icons/fa6";
 
 interface FormData {
   wallText: string;
 }
 
 const GratitudeWall: React.FC = () => {
-  const { data } = useGetWallDataQuery("");
+  const { data, isFetching, isLoading } = useGetWallDataQuery("");
   const wallData = data?.data || [];
-  const [addData, { isLoading }] = useAddWallMutation();
+  const [addData] = useAddWallMutation();
   const { register, handleSubmit, reset } = useForm<FormData>();
 
   const onSubmit: SubmitHandler<FormData> = async (formData) => {
@@ -47,7 +48,21 @@ const GratitudeWall: React.FC = () => {
       });
     }
   };
-
+  if (isLoading) {
+    return (
+      <div className="flex justify-center  ">
+        <h1 className="flex items-center gap-2 text-xl text-blue-700 font-semibold">
+          Loading <FaCircleNotch className="animate-spin" />{" "}
+        </h1>
+      </div>
+    );
+  } else if (isFetching) {
+    <div className="flex justify-center  ">
+      <h1 className="flex items-center gap-2 text-xl text-blue-700 font-semibold">
+        Fetching <FaCircleNotch className="animate-spin" />{" "}
+      </h1>
+    </div>;
+  }
   return (
     <div className="">
       <div className=" mx-auto mt-10 p-6  rounded-md  flex flex-col justify-center items-center">
