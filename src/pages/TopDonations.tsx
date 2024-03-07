@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useGetTestimonialDataQuery } from "@/redux/api/api";
 
 const TopDonations = () => {
   const settings = {
@@ -19,8 +20,9 @@ const TopDonations = () => {
       },
     ],
   };
-
-  const data = [
+  const { data } = useGetTestimonialDataQuery("");
+  console.log(data);
+  const data2 = [
     {
       img: "https://assets.website-files.com/63904f663019b0d8edf8d57c/63905435069fb009d43abbb1_Ellipse-2.jpg",
       name: "Mursalin Hossain",
@@ -54,7 +56,7 @@ const TopDonations = () => {
           </div>
 
           <Slider {...settings}>
-            {data.map((card, index) => (
+            {data?.data?.map((card: any, index: any) => (
               <div
                 key={index}
                 className="cursor-grab relative mb-4 flex flex-col items-center justify-between gap-6 rounded-2xl border border-solid border-[#636262] bg-white px-8 pb-8 pt-16 max-[767px]:mt-4 md:mb-8 md:px-6 md:pb-8 md:pt-16 lg:mb-4 mt-10"

@@ -5,7 +5,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const baseApi = createApi({
     reducerPath: "baseApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "https://l2-b2-frontend-path-assignment-6-server-starter-pack-eta.vercel.app" }), //the main url link
+    baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000" }), //the main url link
     tagTypes: ['todo'],
     endpoints: (builder) => ({
         //getting data from database
@@ -16,11 +16,27 @@ export const baseApi = createApi({
             }),
             providesTags: ['todo']
         }),
+        getTestimonialData: builder.query({
+            query: () => ({
+                url: `/api/v2/get`,
+                method: "GET",
+            }),
+            providesTags: ['todo']
+        }),
 
         //posting task / Create
         addDonationData: builder.mutation({
             query: (data) => ({
                 url: "/api/v1/create",
+                method: "POST",
+                body: data,
+            }),
+            invalidatesTags: ['todo']  //for make fetch after the action
+        }),
+        //posting testimonial / Create
+        addTestimonial: builder.mutation({
+            query: (data) => ({
+                url: "/api/v2/create",
                 method: "POST",
                 body: data,
             }),
@@ -48,4 +64,4 @@ export const baseApi = createApi({
 });
 
 //CRUD api hooks
-export const { useGetDonationDataQuery, useAddDonationDataMutation, useUpdateDataMutation, useDeleteDataMutation } = baseApi;
+export const { useGetDonationDataQuery, useAddDonationDataMutation, useUpdateDataMutation, useDeleteDataMutation, useAddTestimonialMutation, useGetTestimonialDataQuery } = baseApi;

@@ -9,6 +9,7 @@ import Register from "@/pages/Register";
 import PieChart from "@/pages/PieChart";
 import PrivateRoute from "@/components/layouts/PrivateRoute";
 import DonationTable from "@/pages/Dashboard/DonationTable";
+import AddTestimonials from "@/pages/Testimonials/AddTestimonials";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "chart",
         element: <PieChart />,
+      },
+      {
+        path: "create-testimonial",
+        element: <AddTestimonials />,
       },
     ],
   },
