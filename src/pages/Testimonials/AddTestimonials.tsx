@@ -13,6 +13,7 @@ const AddTestimonials = () => {
   const {
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm<FormData>();
   const [addData, { isLoading }] = useAddTestimonialMutation();
@@ -22,7 +23,7 @@ const AddTestimonials = () => {
       await addData(formData);
       // Handle any success logic here
       console.log("Data added successfully!");
-
+      reset();
       // Show SweetAlert2 success alert
       Swal.fire({
         icon: "success",

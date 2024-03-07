@@ -102,7 +102,7 @@ const Login: React.FC = () => {
             {...register("password", { required: "Password is required" })}
             type="password"
             id="password"
-            defaultValue={"123456"}
+            defaultValue={"Abc2024"}
             className="mt-1 p-2 border rounded-md w-full"
           />
           {errors.password && (
