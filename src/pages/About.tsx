@@ -43,7 +43,7 @@ const About = () => {
               <h2 className="text-3xl font-bold md:text-4xl">
                 Digital Volunteers
               </h2>
-              <table className="min-w-full bg-white border border-gray-300">
+              <table className="min-w-full  border border-gray-300">
                 <thead>
                   <tr>
                     <th className="py-2 px-4 border-b text-left align-middle">
