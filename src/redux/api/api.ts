@@ -92,11 +92,19 @@ export const baseApi = createApi({
             }),
             invalidatesTags: ['todo'] //for make fetch after the action
         }),
+        // Login mutation
+        login: builder.mutation({
+            query: (credentials) => ({
+                url: "/api/v1/login",
+                method: "POST",
+                body: credentials,
+            }),
+        }),
     }),
 });
 
 //CRUD api hooks
 export const { useGetDonationDataQuery, useAddDonationDataMutation,
     useUpdateDataMutation, useDeleteDataMutation, useAddTestimonialMutation,
-    useGetTestimonialDataQuery, useGetWallDataQuery, useAddWallMutation, 
-    useAddVolunteerMutation, useGetVolunteerDataQuery } = baseApi;
+    useGetTestimonialDataQuery, useGetWallDataQuery, useAddWallMutation,
+    useAddVolunteerMutation, useGetVolunteerDataQuery, useLoginMutation } = baseApi;

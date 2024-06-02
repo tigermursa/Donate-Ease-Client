@@ -1,3 +1,4 @@
+import { useLoginMutation } from "@/redux/api/api";
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -8,8 +9,20 @@ interface FormData {
   password: string;
 }
 
+const isErrorWithMessage = (
+  error: unknown
+): error is { data: { message: string } } => {
+  return (
+    typeof error === "object" &&
+    error !== null &&
+    "data" in error &&
+    typeof (error as any).data.message === "string"
+  );
+};
+
 const Login: React.FC = () => {
   const navigate = useNavigate();
+  const [login] = useLoginMutation();
 
   const {
     register,
@@ -19,17 +32,9 @@ const Login: React.FC = () => {
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     try {
-      const response = await fetch("https://donate-simple-server.vercel.app/api/v1/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const result = await login(data).unwrap();
 
-      const result = await response.json();
-
-      if (response.ok) {
+      if (result) {
         // Handle successful login
         console.log(result.message);
         // Store the JWT token in localStorage
@@ -43,16 +48,6 @@ const Login: React.FC = () => {
 
         // Redirect to the home ("/") route
         navigate("/");
-      } else {
-        // Handle login error
-        console.error(result.message);
-
-        // Display SweetAlert2 error alert
-        Swal.fire({
-          icon: "error",
-          title: "Login Failed",
-          text: result.message,
-        });
       }
     } catch (error) {
       console.error("Error during login:", error);
@@ -60,8 +55,10 @@ const Login: React.FC = () => {
       // Display SweetAlert2 error alert
       Swal.fire({
         icon: "error",
-        title: "Login Error",
-        text: "An error occurred during login. Please try again.",
+        title: "Login Failed",
+        text: isErrorWithMessage(error)
+          ? error.data.message
+          : "An error occurred during login. Please try again.",
       });
     }
   };
@@ -114,14 +111,13 @@ const Login: React.FC = () => {
         </button>
         <div>
           <p className="text-sm text-gray-400 mt-5">Don't have account?</p>
-          <div className=" flex gap-3 items-center ">
+          <div className="flex gap-3 items-center">
             <NavLink
               to={"/register"}
               className={"text-blue-600 font-semibold mt-4"}
             >
               Sign Up
             </NavLink>
-
             <NavLink to={"/"} className={"text-blue-600 font-semibold mt-4"}>
               Home
             </NavLink>
